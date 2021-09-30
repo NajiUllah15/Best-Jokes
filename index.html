@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlimited Jokes</title>
+    <link rel="shortcut icon" href="/Projects/joke.png" type="image/png" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter&family=Oxygen:wght@300&
+        family=Quicksand:wght@500&family=Signika+Negative:wght@300&family=Zilla+Slab:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Kalam:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #386ec0da;
+        background: -webkit-linear-gradient(to right, #243b55, #141e30);
+        background: linear-gradient(to right, #243b55, #141e30);
+      }
+
+      .header {
+        font-size: 1.86rem;
+        font-weight: bolder;
+        font-family: 'Baloo 2';
+        color: rgba(110, 107, 107, 0.637);
+        /* margin-top: 22px; */
+        transform: translateY(44px);
+        width: 100%;
+        height: 0px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.733);
+        width: 27rem;
+        height: 290px;
+        padding: 12px 20px;
+        overflow: hidden;
+        border: 2px solid rgba(26, 27, 27, 0.788);
+        box-shadow: 20px -20px 30px #03030373;
+        border-radius: 16px;
+      }
+
+      .card-body {
+        margin-top: 33px;
+        height: 240px;
+        /* border: 2px solid black; */
+      }
+
+      .card-heading {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: rgba(3, 133, 240, 0.705);
+        color: white;
+        font-weight: bolder;
+        box-shadow: 2px 2px 12px #000;
+        padding: 12px;
+        text-align: center;
+        font-family: 'Kalam';
+        font-size: 18px;
+        width: 450px;
+      }
+
+      #btn {
+        border: 1px solid #0e0f0fcb;
+        border-radius: 9px;
+        outline: none;
+        text-align: center;
+        position: absolute;
+        bottom: 8px;
+        left: 38%;
+        width: 120px;
+        height: 30px;
+        transition: all 0.11s;
+        font-family: 'Quicksand';
+        color: black;
+        background: rgba(255, 255, 255, 0.007);
+      }
+
+      #btn:hover {
+        cursor: pointer;
+        background: rgba(2, 157, 230, 0.733);
+        border: none;
+        color: black;
+      }
+
+      .main-joke {
+        transform: translate(22px, 12px);
+        margin: 50px 5px;
+        padding: 26px 39px;
+        width: 352px;
+        height: 132px;
+        font-family: 'Quicksand';
+      }
+
+      .main-joke::before {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 15%;
+        width: 222px;
+        height: 1px;
+        border-radius: 12px;
+        background: #0a0a0a1e;
+      }
+      .main-joke::after {
+        content: '😂😁😅';
+        position: absolute;
+        top: -12px;
+        left: 38%;
+        width: 222px;
+        height: 1px;
+      }
+
+      .loading {
+        width: 250px;
+        margin: 112px;
+        transform: translate(-79px, -91px);
+        font-size: 1rem;
+        display: inline-block;
+        /* display: none; */
+        font-weight: bolder;
+        font-family: 'Oxygen';
+      }
+
+      @media only screen and (max-width: 452px) {
+        .container {
+          font-size: 14px;
+        }
+
+        .card {
+          position: relative;
+          background: rgba(250, 253, 255, 0.774);
+          width: 21rem;
+          height: 410px;
+          padding: 12px 23px;
+          overflow: hidden;
+          border: 2px solid rgba(26, 27, 27, 0.788);
+          box-shadow: 20px -20px 30px #121212cb;
+          border-radius: 16px;
+        }
+
+        .main-text {
+          position: absolute;
+          top: 300px;
+          left: 0px;
+          width: 100%;
+        }
+
+        .card-heading {
+          position: absolute;
+          top: 0px;
+          left: -44px;
+          background: rgba(3, 133, 240, 0.705);
+          box-shadow: 2px 2px 12px #000;
+          padding: 12px;
+          text-align: center;
+          font-family: 'Kalam';
+          font-size: 14px;
+          width: 450px;
+        }
+
+        .main-joke {
+          transform: translate(12px, 42px);
+          margin: 50px 5px;
+          padding: 26px 19px;
+          width: 282px;
+          height: 112px;
+          font-family: 'Quicksand';
+        }
+
+        .header {
+          font-size: 1.2rem;
+          width: 80%;
+          margin: 0px 42px;
+        }
+      }
+
+      /* For smallest devices */
+
+      @media only screen and (max-width: 328px) {
+        .card {
+          transform: scale(0.9);
+          position: relative;
+          background: rgba(255, 255, 255, 0.733);
+          width: 21rem;
+          height: 410px;
+          padding: 12px 23px;
+          overflow: hidden;
+          border: 2px solid rgba(26, 27, 27, 0.788);
+          box-shadow: 20px -20px 30px #121212cb;
+          border-radius: 16px;
+        }
+
+        .header {
+          font-size: 1.2rem;
+          margin: 0px 20px;
+        }
+
+        .main-text {
+          position: absolute;
+          top: 300px;
+          left: -23px;
+          width: 62.5rem;
+        }
+
+        .card-heading {
+          font-size: 12px;
+          position: absolute;
+          top: 0px;
+          left: -66px;
+          background: rgba(3, 133, 240, 0.705);
+          box-shadow: 2px 2px 12px #000;
+          padding: 12px;
+          text-align: center;
+          font-family: 'Kalam';
+          font-size: 14px;
+          width: 450px;
+        }
+
+        .main-joke {
+          transform: translate(2px, 42px);
+          margin: 50px 5px;
+          padding: 26px 19px;
+          width: 282px;
+          height: 112px;
+          font-family: 'Quicksand';
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Best Jokes to make you feel happy 😊</div>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-heading">Unlimited Jokes to make your day</div>
+
+          <div class="main-joke">
+            <span class="loading">Awesome joke is loading......</span>
+          </div>
+
+          <button id="btn">Next-Joke</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../Projects/script.js"></script>
+  </body>
+</html>
